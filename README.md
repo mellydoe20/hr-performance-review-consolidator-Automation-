@@ -62,6 +62,46 @@ Microsoft Excel (.xlsx)                 Original review form format (preserved f
 ├── PerformanceReviewAutomation.gs   # Main Apps Script file
 └── README.md                        # This file
 
+Setup Guide
+**Prerequisites**
+
+- A Google account with Google Drive access
+- The Full Year Performance Review .xlsx template
+
+Steps
+1. Create the Apps Script project
+
+Go to script.google.com → New project
+Paste the contents of PerformanceReviewAutomation.gs
+Save and name the project PR Automation
+
+2. Enable the Drive Advanced Service
+
+In the editor, click Services (+) in the left sidebar
+Search for Drive API → click Add
+
+3. Run initial setup
+
+Select setupMasterSheet from the function dropdown
+Click ▶ Run and grant permissions when prompted
+This creates:
+
+Master Performance Reviews Google Sheet in your Drive
+Performance Reviews - Inbox folder in your Drive
+
+
+
+4. Set up the nightly trigger (optional but recommended)
+
+Select setupTrigger from the function dropdown
+Click ▶ Run
+New files dropped into the inbox folder will now be processed automatically every night
+
+5. Process files manually anytime
+
+Drop .xlsx review files into the Performance Reviews - Inbox folder
+Run extractAllReviews() or wait for the nightly trigger
+
 🔑 Key Design Decisions
 Why keep Excel instead of migrating to Google Forms?
 The organisation requires physical signatures from both the employee and the manager on the completed review document for compliance and record-keeping purposes. Excel allows the form to be printed, signed, scanned, and re-uploaded something a purely digital form cannot replicate.
