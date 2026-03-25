@@ -18,17 +18,22 @@ As a result, HR team are left with a painful manual process every review cycle:
 - No single source of truth for leadership to view team performance at a glance.
 
 💡 The Solution
-This project automates the extraction and consolidation of performance review data from completed Excel forms into a live Google Sheets master database, while keeping the Excel-based signing workflow fully intact.
+
+_This project automates the extraction and consolidation of performance review data from completed Excel forms into a live Google Sheets master database, while keeping the Excel-based signing workflow fully intact._
 
 HR simply drops completed .xlsx review files into a designated Google Drive folder. The automation handles the rest.
 
 Employee fills & signs Excel form
+
         ↓
 Manager signs Excel form
+
         ↓
 File dropped into Google Drive folder  ←── HR's only manual step
+
         ↓
 Apps Script extracts all fields automatically
+
         ↓
 Master Google Sheet updated with new row (able to set timer)
 
@@ -56,13 +61,16 @@ Google Apps Script                      Core automation runtime
 Google Drive API (Advanced Service)     .xlsx → Google Sheets conversion
 Google Sheets                           Master database and processing log
 Google Drive                            File storage and folder-based input trigger
-Microsoft Excel (.xlsx)                 Original review form format (preserved for                                         signatures)
+Microsoft Excel (.xlsx)                 Original review form format (preserved for signatures)
 
 📁 Project Structure
-├── PerformanceReviewAutomation.gs   # Main Apps Script file
+
+├── PerformanceReviewAutomation.gs # Main Apps Script file
+
 └── README.md                        # This file
 
 Setup Guide
+
 **Prerequisites**
 
 - A Google account with Google Drive access
